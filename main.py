@@ -28,9 +28,16 @@ class Drive:
         sleep(5)
         driver.get("https://www.google.com/maps/d/edit?mid=1U_qsdjzpjUxvh_4NWD_0wxcMw3DFlayR&ll=29.025576256879262%2C-92.41699249999999&z=4")
         driver.maximize_window()
+        sleep(2)
+        import_button = WebDriverWait(driver, 100).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Import')]"))).click()
+        sleep(2)
+        gdrive = WebDriverWait(driver, 100).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Google Drive')]"))).click()
+        sleep(2)
+
+
         sleep(10)
 
 
-app = Drive()
+my_bot = Drive()
 
 
